@@ -1,9 +1,13 @@
 {
-  "name": "assignment1",
-  "version": "0.0.0",
+  "name": "comp229-assignment1",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./server.js"
+  },
+  "engines": {
+    "node": "^12.00.0",
+    "npm": "^6.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
@@ -16,5 +20,21 @@
     "jquery": "^3.6.0",
     "morgan": "^1.9.1",
     "popper.js": "^1.16.1"
-  }
+  },
+  "description": "21F assignment1",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yskrk/COMP229-F21_Assignment1.git"
+  },
+  "author": "Yusuke Kuroki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yskrk/COMP229-F21_Assignment1/issues"
+  },
+  "homepage": "https://github.com/yskrk/COMP229-F21_Assignment1#readme"
 }
