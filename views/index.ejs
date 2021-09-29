@@ -1,13 +1,26 @@
+<!-- Yusuke Kuroki(301137023) Sept.27 -- index.ejs -->
 <%- include partials/header.ejs%>
 
 <%- include partials/main_nav.ejs%>
 
-
-
 	<!-- main content -->
 	<main class="container">
 		<div class="jumbotron">
-			<h1 class="display-4">Welcome to the <%= title %> page</h1>
+			<!-- Each sections are separeted in order to mentain easily -->
+			<% if (title == 'Home') { %>
+				<%- include partials/home.ejs%>
+			<% } else if (title == 'About Me') { %>
+				<%- include partials/about.ejs%>
+			<% } else if (title == 'Projects') { %>
+				<%- include partials/project.ejs%>
+			<% } else if (title == 'Services') { %>
+				<%- include partials/service.ejs%>
+			<% } else if (title == 'Contact') { %>
+				<%- include partials/contact.ejs%>
+			<% } else { %>
+				<h1 class="display-4"><%= title %></h1>
+				<%- include partials/home.ejs%>
+			<% } %>
 		</div>
 	</main>
 
