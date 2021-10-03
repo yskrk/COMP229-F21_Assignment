@@ -1,5 +1,5 @@
 {
-  "name": "comp229-assignment2",
+  "name": "comp229-assignment1",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -22,20 +22,19 @@
     "morgan": "^1.9.1",
     "popper.js": "^1.16.1"
   },
-  "description": "21F assignment2",
-  "main": "index.js",
+  "description": "21F assignment1",
   "directories": {
     "doc": "docs"
   },
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yskrk/COMP229-F21_Assignment2.git"
+    "url": "git+https://github.com/yskrk/COMP229-F21_Assignment1.git"
   },
   "author": "Yusuke Kuroki",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yskrk/COMP229-F21_Assignment2/issues"
+    "url": "https://github.com/yskrk/COMP229-F21_Assignment1/issues"
   },
-  "homepage": "https://github.com/yskrk/COMP229-F21_Assignment2#readme"
+  "homepage": "https://github.com/yskrk/COMP229-F21_Assignment1#readme"
 }
