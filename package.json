@@ -28,6 +28,7 @@
     "popper.js": "^1.16.1"
   },
   "description": "21F assignment1",
+  "main": "server.js",
   "directories": {
     "doc": "docs"
   },
