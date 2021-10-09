@@ -8,10 +8,14 @@
 		<div class="row">
 			<div class="offset-md-1 col-md-11">
 				<h1><%= title %></h1>
-				<a href="/book-list/add" class="btn btn-primary" role="button">
-					<i class="fas fa-plus-circle"> Add a Book</i>
-				</a>
-				<br><br>
+
+				<% if (typeof displayName == 'string' && displayName) { %>
+					<a href="/book-list/add" class="btn btn-primary" role="button">
+						<i class="fas fa-plus-circle"> Add a Book</i>
+					</a>
+					<br><br>
+				<% } %>
+
 				<table class="table table-bordered table-striped table-hover">
 					<!-- header row-->
 					<tr>
@@ -20,8 +24,11 @@
 						<th class="text-center col-1">Published</th>
 						<th class="col-4">Description</th>
 						<th class="text-center">Price</th>
-						<th class="text-center col-1"></th>
-						<th class="text-center col-1"></th>
+
+						<% if (typeof displayName == 'string' && displayName) { %>
+							<th class="text-center col-1"></th>
+							<th class="text-center col-1"></th>
+						<% } %>
 					</tr>
 
 					<!-- repeatable template row-->
@@ -32,17 +39,20 @@
 							<td class="text-center col-1"><%= BookList[count].published %></td>
 							<td class="col-4"><%= BookList[count].description %></td>
 							<td class="text-center col-1"><%= BookList[count].price %></td>
-							<th class="text-center col-1">
-								<a href="/book-list/edit/<%= BookList[count]._id %>" class="btn btn-primary btn-sm">
-									<i class="fas fa-pencil-alt"> Edit</i>
-								</a>
-							</th>
-							<th class="text-center col-1">
-								<a href="/book-list/delete/<%= BookList[count]._id %>" class="btn btn-danger btn-sm">
-								<i class="fas fa-trash-alt"> Delete</i>
-								</a>
-							</th>
-							</tr>
+
+							<% if (typeof displayName == 'string' && displayName) { %>
+								<td class="text-center col-1">
+									<a href="/book-list/edit/<%= BookList[count]._id %>" class="btn btn-primary btn-sm">
+										<i class="fas fa-pencil-alt"><br>Edit</i>
+									</a>
+								</td>
+								<td class="text-center col-1">
+									<a href="/book-list/delete/<%= BookList[count]._id %>" class="btn btn-danger btn-sm">
+									<i class="fas fa-trash-alt"> Delete</i>
+									</a>
+								</td>
+							<% } %>
+						</tr>
 					<% } %>
 				</table>
 			</div>

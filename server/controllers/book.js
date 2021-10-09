@@ -11,13 +11,22 @@ module.exports.displayBookList = (req, res, next) => {
 			return console.error(err);
 		} else {
 			// console.log(BookList);
-			res.render('book/list', {title: 'Books', BookList: bookList});
+			res.render('book/list', 
+				{
+					title: 'Books', 
+					BookList: bookList, 
+					displayName: req.user ? req.user.displayname : ''
+				});
 		}
 	});
 };
 
 module.exports.displayAddPage = (req, res, next) => {
-	res.render('book/add', {title: 'Add Book'});
+	res.render('book/add', 
+		{
+			title: 'Add Book', 
+			displayName: req.user ? req.user.displayname : ''
+		});
 };
 
 module.exports.processAddPage = (req, res, next) => {
@@ -49,7 +58,12 @@ module.exports.displayEditPage = (req, res, next) => {
 			res.end(err);
 		} else {
 			// show the edit view
-			res.render('book/edit', {title: 'Edit Book', book: bookToEdit})
+			res.render('book/edit', 
+				{
+					title: 'Edit Books', 
+					book: bookToEdit, 
+					displayName: req.user ? req.user.displayname : ''
+				});
 		}
 	});
 };
