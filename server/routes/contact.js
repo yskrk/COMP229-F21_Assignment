@@ -1,3 +1,5 @@
+// Yusuke Kuroki(301137023) Oct.18 -- made Business contact routes for assignment 2
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');

@@ -87,65 +87,66 @@ module.exports.processLoginPage = (req, res, next) => {
 					// 	}, 
 					// 	token: authToken});
 
-				return res.redirect('/book-list');
+				return res.redirect('/contact-list');	// change redirect to business contact list
 			});
 		}
 	)(req, res, next);
 }
 
-module.exports.displayRegisterPage = (req, res, next) => {
-	// check if the user is not already logged in
-	if (!req.user) {
-		res.render('auth/register',
-		{
-			title: 'Register',
-			messages: req.flash('registerMessage'),
-			displayName: req.user ? req.user.displayname : ''
-		});
-	} else {
-		return res.redirect('/');
-	}
-}
+// disable register form for assignment 2
+// module.exports.displayRegisterPage = (req, res, next) => {
+// 	// check if the user is not already logged in
+// 	if (!req.user) {
+// 		res.render('auth/register',
+// 		{
+// 			title: 'Register',
+// 			messages: req.flash('registerMessage'),
+// 			displayName: req.user ? req.user.displayname : ''
+// 		});
+// 	} else {
+// 		return res.redirect('/');
+// 	}
+// }
 
-module.exports.processRegisterPage = (req, res, next) => {
-	// instantiate a user object
-	let newUser = new User({
-		username: req.body.username,
-		password: req.body.password,
-		email: req.body.email,
-		displayname: req.body.displayname
-	});
+// module.exports.processRegisterPage = (req, res, next) => {
+// 	// instantiate a user object
+// 	let newUser = new User({
+// 		username: req.body.username,
+// 		password: req.body.password,
+// 		email: req.body.email,
+// 		displayname: req.body.displayname
+// 	});
 
-	User.register(newUser, req.body.password, (err) => {
-		if (err) {
-			console.log("Error: Inserting New user");
-			if (err.name == "UserExistsError") {
-				req.flash (
-					'registerMessage',
-					'Registration Error: User Already Exists!'
-				);
-				console.log('Error: User Already Exixsts!');
-			}
+// 	User.register(newUser, req.body.password, (err) => {
+// 		if (err) {
+// 			console.log("Error: Inserting New user");
+// 			if (err.name == "UserExistsError") {
+// 				req.flash (
+// 					'registerMessage',
+// 					'Registration Error: User Already Exists!'
+// 				);
+// 				console.log('Error: User Already Exixsts!');
+// 			}
 
-			return res.render('auth/register',
-			{
-				title: 'Register',
-				messages: req.flash('registerMessage'),
-				displayName: req.user ? req.user.displayname : ''
-			});
-		} else {
-			// if no error exists, then registration is successful
-			// redirect the user and authenticate them
+// 			return res.render('auth/register',
+// 			{
+// 				title: 'Register',
+// 				messages: req.flash('registerMessage'),
+// 				displayName: req.user ? req.user.displayname : ''
+// 			});
+// 		} else {
+// 			// if no error exists, then registration is successful
+// 			// redirect the user and authenticate them
 
-			// TODO - getting ready to convert to API
-			// res.json({success: true, msg: 'User Registered Successfully!'});
+// 			// TODO - getting ready to convert to API
+// 			// res.json({success: true, msg: 'User Registered Successfully!'});
 
-			return passport.authenticate('local')(req, res, () => {
-				res.redirect('/book-list');
-			});
-		}
-	});
-}
+// 			return passport.authenticate('local')(req, res, () => {
+// 				res.redirect('/contact-list');	// change redirect to business contact list
+// 			});
+// 		}
+// 	});
+// }
 
 module.exports.performLogout = (req, res, next) => {
 	req.logout();

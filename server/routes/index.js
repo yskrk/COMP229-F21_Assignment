@@ -26,10 +26,10 @@ router.get('/login', indexController.displayLoginPage);
 router.post('/login', indexController.processLoginPage);
 
 /* GET route for displaying Register page */
-router.get('/register', indexController.displayRegisterPage);
+// router.get('/register', indexController.displayRegisterPage);	// disable register form for assignment 2
 
 /* POST route for processing Register page */
-router.post('/register', indexController.processRegisterPage);
+// router.post('/register', indexController.processRegisterPage);	// disable register form for assignment 2
 
 /* GET to perform User logout*/
 router.get('/logout', indexController.performLogout);

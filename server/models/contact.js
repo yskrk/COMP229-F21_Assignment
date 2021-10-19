@@ -1,3 +1,5 @@
+// Yusuke Kuroki(301137023) Oct.18 -- made Business contact model for assignment 2
+
 let mongoose = require('mongoose');
 
 // create a model class
