@@ -111,7 +111,7 @@ module.exports.processRegisterPage = (req, res, next) => {
 	// instantiate a user object
 	let newUser = new User({
 		username: req.body.username,
-		// password: req.body.password,
+		password: req.body.password,
 		email: req.body.email,
 		displayname: req.body.displayname
 	});
@@ -135,7 +135,6 @@ module.exports.processRegisterPage = (req, res, next) => {
 			});
 		} else {
 			// if no error exists, then registration is successful
-
 			// redirect the user and authenticate them
 
 			// TODO - getting ready to convert to API
