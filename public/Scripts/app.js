@@ -11,7 +11,7 @@
 			button.addEventListener('click', (event) => {
 				if (!confirm("Are you sure?")) {
 					event.preventDefault();
-					window.location.assign('/book-list');
+					window.location.assign('/contact-list');	// change for moving to business contact list
 				}
 			});
 		}
